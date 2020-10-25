@@ -1,0 +1,47 @@
+body {
+    font: Source Code Pro;
+}
+form {
+    margin: 100px;
+}
+h1, h2, h3 {
+    max-width: 320px;
+    text-align: center;
+    margin: 0 auto;
+    border-style: solid .5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+}
+.date {
+    background: #f3e5f5;
+}
+.conditions {
+    background: #e1bee7;
+}
+.city {
+    background: #ce93d8;
+}
+h1:hover {
+    background: white;
+    width: 500px;
+}
+h2:hover {
+    background: white;
+    width: 500px;
+}
+h3:hover {
+    background: white;
+    width: 500px;
+}
+div .card-header {
+    border-radius: 20px;
+    text-align: center;
+}
+.card-body {
+    background: #fff3e0;
+    transition: all 200ms ease-in-out;
+}
+.temp {
+    text-align: center;
+}

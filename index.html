@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local weather conditions</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<div class="container">
+    <form class="search-form" id="search-form">
+      <div class="row">
+        <div class="col-9">
+          <input type="search" 
+          placeholder="What city are you in?" 
+          autofocus="on" 
+          autocomplete="off"
+          id="city-input"
+          class="form-control shadow-sm">
+        </div>
+        <div class="col-3">
+          <input 
+          type="submit"
+          value="Search"
+          class="form-control btn btn-primary shadow-sm">
+        </div>
+      </div>
+      </form>
+      <h1 class="city" id="city">
+        Brooklyn, NY
+      </h1>
+       <br />
+        <h2 class="date" id="date">
+          Wednesday 15:03  
+        </h2>
+        <br />
+        <h3 class="conditions" id="conditions">
+          76° / Rainy and overcast
+        </h3>
+    <br />
+    <br />
+      <div class="card border-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">5 day forecast</div>
+        <div class="card-body text-info">
+          <p class="card-text">
+             <div class="row">
+                 <div class ="col" class="temp">
+                     <strong>High</strong> 
+                     <br />
+                     76°
+                     <br />
+                     75°
+                     <br />
+                     72°
+                     <br />
+                     72°
+                     <br />
+                     76°
+                 </div>
+                 <div class="col" class="temp">
+                    <strong>Low</strong> 
+                    <br />
+                    68°
+                    <br />
+                    69°
+                    <br />
+                    58°
+                    <br />
+                    59°
+                    <br />
+                    52°
+                 </div>
+             </div> 
+          </p>
+        </div>
+        </div>
+</div>
+</div>
+<script src="src/index.js">
+</script>
+</body>
+</html>
