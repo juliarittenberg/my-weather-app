@@ -57,4 +57,7 @@ div .card-header {
 .information {
     text-align: center;
 }
+.description {
+    text-transform: capitalize;
+}
 
