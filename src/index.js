@@ -35,6 +35,7 @@ function displayTemperature(response) {
     let iconElement = document.querySelector("#icon");
 
     currentTemperature.innerHTML = Math.round(response.data.main.temp);
+    farenheitTemperature.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
     windElement.innerHTML = response.data.wind.speed;
