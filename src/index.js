@@ -35,7 +35,6 @@ function displayTemperature(response) {
     let iconElement = document.querySelector("#icon");
 
     currentTemperature.innerHTML = Math.round(response.data.main.temp);
-    farenheitTemperature.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
     windElement.innerHTML = response.data.wind.speed;
@@ -65,7 +64,9 @@ let dateElement = document.querySelector("#today-date");
 let currentTime = new Date();
 dateElement.innerHTML = formateDate(currentTime);
 
-search("New York");
+
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+search("New York");
