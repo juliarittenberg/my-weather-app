@@ -47,6 +47,9 @@ ul:hover {
     background: white;
     width: 500px;
 }
+div {
+    text-align: center;
+}
 div .card-header {
     border-radius: 20px;
     text-align: center;
