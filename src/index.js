@@ -25,21 +25,47 @@ function formateDate(timestamp) {
     return `${hours}:${minutes}`;
   }
 
-function displayWeatherCondition(response) {
-  console.log(response.data.name);
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#high-temp").innerHTML = Math.round(response.data.main.temp);
-}
+  function displayTemperature(response) {
+    let temperatureElement = document.querySelector("#current-temp");
+    let cityElement = document.querySelector("#city");
+    let descriptionElement = document.querySelector("#description");
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    let dateElement = document.querySelector("#today-date");
+    let iconElement = document.querySelector("#icon");
+  
+    celsiusTemperature = response.data.main.temp;
+  
+    temperatureElement.innerHTML = Math.round(farenheitTemperature);
+    cityElement.innerHTML = response.data.name;
+    descriptionElement.innerHTML = response.data.weather[0].description;
+    humidityElement.innerHTML = response.data.main.humidity;
+    windElement.innerHTML = Math.round(response.data.wind.speed);
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    iconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+  }
 
-function search(event) {
-  event.preventDefault();
+
+
+function search(city) {
   let apiKey = "343ac52bf9dde9bc1d6f3ef42ae65aa5";
-  let city = document.querySelector("#city-input").value;
-  let units = "imperial";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
-  axios.get(apiUrl).then(displayWeatherCondition);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(showWeather);
   console.log(apiUrl);
 }
+
+function handleSubmit(event) {
+  debugger;
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  search(city);
+}
+
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
@@ -51,3 +77,5 @@ let units = "imperial";
 let dateElement = document.querySelector("#today-date");
 let currentTime = new Date();
 dateElement.innerHTML = formateDate(currentTime);
+
+search("New York City");

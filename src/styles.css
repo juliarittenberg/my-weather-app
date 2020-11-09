@@ -13,7 +13,9 @@ h1, h2 {
     border-radius: 20px;
     transition: all 200ms ease-in-out;
 }
-h3 {
+ul {
+    font: Arial;
+    list-style: none;
     max-width: 200px;
     text-align: center;
     margin: 0 auto;
@@ -21,25 +23,12 @@ h3 {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     transition: all 200ms ease-in-out;
-}
-h4 {
-    max-width: 200px;
-    text-align: center;
-    margin: 0 auto;
-    border-style: solid .5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    transition: all 200ms ease-in-out;
+    padding: 20px;
 }
 .today-date {
     background: #f3e5f5;
 }
-.current-temp {
-    background: #e1bee7;}
-.high-temp {
-    background: #e1bee7;
-}
-.low-temp {
+ul {
     background: #e1bee7;
 }
 .city {
@@ -53,7 +42,7 @@ h2:hover {
     background: white;
     width: 500px;
 }
-h3:hover {
+ul:hover {
     background: white;
     width: 500px;
 }
@@ -68,3 +57,4 @@ div .card-header {
 .information {
     text-align: center;
 }
+
